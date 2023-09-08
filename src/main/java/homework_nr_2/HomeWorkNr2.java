@@ -5,27 +5,27 @@ public class HomeWorkNr2 {
 
         System.out.println("Hello World");
     //_______________________________________________________
-        long CurrentWorldPopulation = 7811080815L;
-        int CarsProducedThisYear = 55235358;
-        char FirstLetterlnInAlphabet = 'A';
-        float Pi = 3.114159F;
+        long currentWorldPopulation = 7811080815L;
+        int carsProducedThisYear = 55235358;
+        char firstLetterlnInAlphabet = 'A';
+        float pi = 3.114159F;
 
-        System.out.println(CurrentWorldPopulation);
-        System.out.println(CarsProducedThisYear);
-        System.out.println(FirstLetterlnInAlphabet);
-        System.out.println(Pi);
+        System.out.println(currentWorldPopulation);
+        System.out.println(carsProducedThisYear);
+        System.out.println(firstLetterlnInAlphabet);
+        System.out.println(pi);
     //_________________________________________________________
-        double Price = 5.65;
-        double Tax = 2.16;
-        int Quantity = 12;
+        double price = 5.65;
+        double tax = 2.16;
+        int quantity = 12;
         double sum = 0;
 
-        System.out.println(Price);
-        System.out.println(Tax);
-        System.out.println(Quantity);
+        System.out.println(price);
+        System.out.println(tax);
+        System.out.println(quantity);
         System.out.println(sum);
 
-        double total = Price + Tax * Quantity + sum;
+        double total = price + tax * quantity + sum;
         System.out.println(total);
 
     }
