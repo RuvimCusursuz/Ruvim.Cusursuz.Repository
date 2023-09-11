@@ -52,7 +52,7 @@ public class HomeWorkNr3 {
         }
 //________________________________________________________________________________________________
         double sum = 0;
-        for (double i = 1; i <= 97 ; i= i + 2) {
+        for (double i = 1; i <= 97 ; i = i + 2) {
                 sum = i/(i+2) + sum;
         }
         System.out.println(sum);
