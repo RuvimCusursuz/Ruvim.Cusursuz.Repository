@@ -1,5 +1,7 @@
 package homework_nr_5;
 
+import java.math.BigInteger;
+
 public class HomeWorkNr5 {
     public static void main(String[] args) {
         int[] numbers = new int[101];
@@ -11,12 +13,13 @@ public class HomeWorkNr5 {
             System.out.println(numbers[i]);
         }
         int sum=0;
-        int product = 1;
+        BigInteger product = BigInteger.valueOf(1);
         for (int i = 0; i <= 100; i++) {
             if (numbers[i] % 2 == 0) {
                 sum += numbers[i];
             } else {
-                product *= numbers[i];
+                BigInteger x = BigInteger.valueOf(numbers[i]);
+                product = product.multiply(x);
             }
         }
             System.out.println(sum);
