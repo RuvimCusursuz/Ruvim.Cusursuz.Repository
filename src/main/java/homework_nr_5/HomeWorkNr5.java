@@ -29,9 +29,9 @@ public class HomeWorkNr5 {
         int[] copyNumbers = new int[101];
 
 
-//        for (int i = 0; i <= 100; i++) {
-//            copyNumbers[i] = numbers[i];
-//        }
+        for (int i = 0; i <= 100; i++) {
+            copyNumbers[i] = numbers[i];
+        }
 //        or
         copyNumbers = Arrays.copyOf(numbers, 101);
         System.out.println(copyNumbers[8]);
