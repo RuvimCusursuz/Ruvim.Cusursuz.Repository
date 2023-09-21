@@ -7,10 +7,12 @@ public class TemperatureConverter {
         System.out.println(temperatureConverter.toFahrenheit(63));
 
     }
-    public double toCelsius(double fahrenheit){
-        return (fahrenheit-32)*5/9;
+
+    public double toCelsius(double fahrenheit) {
+        return (fahrenheit - 32) * 5 / 9;
     }
-    public double toFahrenheit(double celsius){
-        return (celsius*9/5)+32;
+
+    public double toFahrenheit(double celsius) {
+        return (celsius * 9 / 5) + 32;
     }
 }
