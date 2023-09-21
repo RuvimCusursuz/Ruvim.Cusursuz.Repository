@@ -2,9 +2,9 @@ package Homework_nr_7;
 
 public class Manager extends Employee {
     int teamSize;
-    int teamName;
+    String teamName;
 
-    public Manager(String name, String surname, String companyName, int teamSize, int teamName) {
+    public Manager(String name, String surname, String companyName, int teamSize, String teamName) {
         super(name, surname, companyName);
         this.teamSize = teamSize;
         this.teamName = teamName;

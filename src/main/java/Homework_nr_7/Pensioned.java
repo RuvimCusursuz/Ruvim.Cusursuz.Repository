@@ -2,7 +2,7 @@ package Homework_nr_7;
 
 import java.util.Date;
 
-abstract public class Pensioned extends Person{
+ abstract public class Pensioned extends Person{
     Date retireDate;
     int age;
 
