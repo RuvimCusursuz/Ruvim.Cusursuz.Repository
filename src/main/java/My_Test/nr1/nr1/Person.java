@@ -1,4 +1,4 @@
-package My_Test;
+package My_Test.nr1.nr1;
 
 public class Person {
     static int numberOfPerson = 0;

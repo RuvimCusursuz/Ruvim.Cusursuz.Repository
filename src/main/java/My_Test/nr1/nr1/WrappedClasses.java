@@ -1,4 +1,4 @@
-package My_Test;
+package My_Test.nr1.nr1;
 
 public class WrappedClasses {
     public static void main(String[] args) {
