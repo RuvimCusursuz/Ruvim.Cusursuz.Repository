@@ -1,4 +1,4 @@
-package Homework_nr_8;
+package Homework_nr_8.Vocabulary;
 
 abstract public class Word {
     private String value;

@@ -16,6 +16,8 @@ public class Main {
         return todayList;
     }
 
+
+// Я не понял до конца какое именно уникальное значени, поэтому сделал с HashMap и с HashSet
     public static ArrayList<String> returnTheKey(ArrayList<String> mylist) {
         HashMap<String, String> hashMapNr1 = new HashMap<>();
         for (int i = 0; i < mylist.size(); i++) {
@@ -27,11 +29,20 @@ public class Main {
         }
         return keys;
     }
+// второй вариант
+    public static HashSet<String> returnTheSet (ArrayList<String> mylist){
+        HashSet mySet = new HashSet<>();
+        for (String parametr: mylist){
+            mySet.add(parametr);
+        }
+        return mySet;
+    }
+
 
     public static void main(String[] args) {
         ArrayList<String> list = myToDoList();
         System.out.println(list);
         System.out.println(returnTheKey(list));
-
+        System.out.println(returnTheSet(list));
     }
 }

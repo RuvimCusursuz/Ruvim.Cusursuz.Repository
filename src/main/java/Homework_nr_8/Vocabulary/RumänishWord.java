@@ -1,4 +1,4 @@
-package Homework_nr_8;
+package Homework_nr_8.Vocabulary;
 
 public class RumänishWord extends Word{
     public String Language = "Romanish";
