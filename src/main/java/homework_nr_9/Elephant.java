@@ -22,4 +22,9 @@ public class Elephant extends Erbivor implements Animalble{
         System.out.println("Elephant eat grass");
 
     }
+
+    @Override
+    public void erBivorIsOnPlants() {
+        System.out.println("Elephant is on Plant");
+    }
 }
