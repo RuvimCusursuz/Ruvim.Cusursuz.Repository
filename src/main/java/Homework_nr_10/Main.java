@@ -3,6 +3,7 @@ package Homework_nr_10;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,6 +15,9 @@ public class Main {
 
         Function<Integer, Integer> function = x ->  x * x;
         System.out.println(multiplication( 5 , function));
+
+        Supplier<Double> supplier = () -> Math.random();
+        System.out.println(random(supplier));
     }
     public static boolean is( Integer objekt, Predicate predicate){
         return  predicate.test(objekt);
@@ -25,5 +29,9 @@ public class Main {
 
     public static Integer multiplication(Integer x, Function function){
         return (Integer) function.apply(x);
+    }
+
+    public static Double random(Supplier supplier){
+        return (Double) supplier.get();
     }
 }
