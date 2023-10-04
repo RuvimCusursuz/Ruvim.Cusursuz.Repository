@@ -3,11 +3,11 @@ package bonus_hm_1;
 public class BankAccaunt {
     private Integer accountNumber;
     private String nameOfMan;
-    private Integer accountBalance;
+    private Double accountBalance;
 
     static private Integer countOfBankAccount = 0;
 
-    public BankAccaunt(Integer accountNumber, String nameOfMan, Integer accountBalance) {
+    public BankAccaunt(Integer accountNumber, String nameOfMan, Double accountBalance) {
         this.accountNumber = accountNumber;
         this.nameOfMan = nameOfMan;
         this.accountBalance = accountBalance;
@@ -18,11 +18,15 @@ public class BankAccaunt {
         return accountNumber;
     }
 
+    public static Integer getCountOfBankAccount() {
+        return countOfBankAccount;
+    }
+
     public String getNameOfMan() {
         return nameOfMan;
     }
 
-    public Integer getAccountBalance() {
+    public double getAccountBalance() {
         return accountBalance;
     }
 
