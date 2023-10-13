@@ -24,19 +24,19 @@ public class Main {
                 .map(x -> x.getName())
                 .distinct()
                 .forEach(person -> System.out.println(person));
-        System.out.println("__________________");
-        ArrayList<Person> personsNew = new ArrayList<>();
 
+        System.out.println("__________________");
+
+        ArrayList<Person> personsNew = new ArrayList<>();
         persons.stream()
                 .filter(x -> x.getAge() > 30 && x.getSurname().startsWith("A"))
                 .forEach(person -> personsNew.add(person));
-
         for (Person e : personsNew) {
             System.out.println(e.getName());
-
         }
-        Optional<Person> optionalAgeIs37 = persons.stream().filter(x -> x.getAge() == 37). findFirst();
-        if (optionalAgeIs37.isPresent()){
+
+        Optional<Person> optionalAgeIs37 = persons.stream().filter(x -> x.getAge() == 37).findFirst();
+        if (optionalAgeIs37.isPresent()) {
             System.out.println(optionalAgeIs37.get().getName());
         }
     }
