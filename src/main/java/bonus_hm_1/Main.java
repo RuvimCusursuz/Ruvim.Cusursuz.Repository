@@ -9,6 +9,8 @@ public class Main {
         Bank.getMoneyFromAccount("Ruvim Cusursuz", 10);
         Bank.showAllAccount();
 
+        Bank.getMoneyFromAccount("Ruvim Cusursuz", 250);
+
         Bank.showAccountBalance("Ruvim Cusursuz");
     }
 }

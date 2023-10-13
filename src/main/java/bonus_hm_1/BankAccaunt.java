@@ -33,11 +33,11 @@ public class BankAccaunt {
     public void putMoneyOnAccount(Integer money) {
         this.accountBalance += money;
     }
-    public void takeMoneyFromAccount(Integer money){
-        if(this.accountBalance - money >= 0){
-            this.accountBalance-= money;
-        }
-        else {
+
+    public void takeMoneyFromAccount(Integer money) {
+        if (this.accountBalance - money >= 0) {
+            this.accountBalance -= money;
+        } else {
             System.out.println("not enough money on account");
         }
     }

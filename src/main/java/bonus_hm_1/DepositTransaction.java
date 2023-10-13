@@ -1,6 +1,6 @@
 package bonus_hm_1;
 
-public class DepositTransaction implements Transaction{
+public class DepositTransaction implements Transaction {
     private BankAccaunt bankAccaunt;
     private Integer money;
 
