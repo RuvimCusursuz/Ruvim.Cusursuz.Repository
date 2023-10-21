@@ -6,16 +6,16 @@ public class Main {
         System.out.println(boingX333.getMannufacturer());
 
         createAirplaneEAFP("Airbus", "A330", 2);
-        createAirplaneEAFP("Airbus", "A350", 3);
+        createAirplaneEAFP("Airbus", "A350", -4);
         createAirplaneEAFP("Tu", "154", 2);
 
         createAirplaneLByL(null, "A330", 2);
-        createAirplaneLByL("Airbus", "A330", 2);
+        createAirplaneLByL("Airbus", "A330", -8);
         createAirplaneLByL("Airbus", "A330", 2);
 
     }
 
-    public static Airplane createAirplaneLByL(String manufacturer, String model, int numOfEn) throws InvalidAirplaneException{
+    public static Airplane createAirplaneLByL(String manufacturer, String model, int numOfEn) throws InvalidAirplaneException {
         if (manufacturer == null || manufacturer.length() == 0) {
             System.out.println("Manufacturer is invalid");
             return null;
@@ -31,10 +31,10 @@ public class Main {
         return new Airplane(manufacturer, model, numOfEn);
     }
 
-    public static Airplane createAirplaneEAFP(String manufacturer, String model, int numOfEn){
-        try{
+    public static Airplane createAirplaneEAFP(String manufacturer, String model, int numOfEn) {
+        try {
             return new Airplane(manufacturer, model, numOfEn);
-        } catch (InvalidAirplaneException e){
+        } catch (InvalidAirplaneException e) {
             e.printStackTrace();
             return null;
         }
