@@ -1,4 +1,4 @@
-package bonus_hm_2.tasks;
+package bonus_hm_2.tasks.Exception;
 
 public class TaskExceprion extends Exception{
     public TaskExceprion(String message) {

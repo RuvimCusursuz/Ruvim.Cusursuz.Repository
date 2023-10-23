@@ -1,22 +1,25 @@
 package bonus_hm_2.tasks;
 
+import bonus_hm_2.tasks.enums.Prioritises;
+import bonus_hm_2.tasks.enums.TaskStatus;
+
 import java.time.LocalDate;
 import java.util.Date;
 
 public class Task {
     private static int numberOfTask;
     private final String taskName;
-    private String taskDiscription;
+    private final String taskDiscription;
     private Prioritises priorites;
     private TaskStatus taskStatus;
     private java.util.Date deadLine;
     private LocalDate addDay;
 
-    public Task(String taskName, String taskDiscription, Prioritises priorites, java.util.Date deadLine) {
+    public Task(String taskName, String taskDiscription, java.util.Date deadLine) {
         this.taskName = taskName;
         this.taskStatus = TaskStatus.NOT_STARTED;
         this.taskDiscription = taskDiscription;
-        this.priorites = priorites;
+        this.priorites = Prioritises.NON;
         this.deadLine = deadLine;
         numberOfTask++;
         this.addDay = LocalDate.now();
@@ -51,7 +54,7 @@ public class Task {
         return deadLine;
     }
 
-    public static int getNumberOfTask() {
+    public int getNumberOfTask() {
         return numberOfTask;
     }
 

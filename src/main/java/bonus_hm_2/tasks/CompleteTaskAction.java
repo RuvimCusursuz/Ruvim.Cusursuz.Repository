@@ -1,6 +1,9 @@
 package bonus_hm_2.tasks;
 
-public class CompleteTaskAction implements TaskAction{
+import bonus_hm_2.tasks.Exception.InvalidStatusException;
+import bonus_hm_2.tasks.enums.TaskStatus;
+
+public class CompleteTaskAction implements TaskAction {
     Task task;
 
     public CompleteTaskAction(Task task) {
@@ -10,15 +13,14 @@ public class CompleteTaskAction implements TaskAction{
                 throw new InvalidStatusException("Status is already Completed");
             }
             this.task = task;
-        }
-        catch (InvalidStatusException e){
-//            &&&&&&&&&&&&&&&&&&&&&&&
+        } catch (InvalidStatusException e) {
+            e.printStackTrace();
         }
     }
 
     @Override
-    public void perform() {
-         this.task.setTaskStatus(TaskStatus.COMPLETED);
-
+    public Task perform() {
+        this.task.setTaskStatus(TaskStatus.COMPLETED);
+        return this.task;
     }
 }

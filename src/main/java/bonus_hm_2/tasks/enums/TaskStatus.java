@@ -1,4 +1,4 @@
-package bonus_hm_2.tasks;
+package bonus_hm_2.tasks.enums;
 
 public enum TaskStatus {
     NOT_STARTED,
