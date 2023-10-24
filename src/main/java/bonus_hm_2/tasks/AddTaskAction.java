@@ -34,5 +34,4 @@ public class AddTaskAction implements TaskAction {
         return new Task(taskName,taskDiscription,deadLine);
 
     }
-
 }

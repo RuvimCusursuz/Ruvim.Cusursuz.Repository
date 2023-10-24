@@ -38,7 +38,6 @@ public class TaskManager {
             System.out.println("invaled date format");
             System.out.println(" try again");
         }
-
     }
 
     public void setAllTask() {
@@ -50,7 +49,7 @@ public class TaskManager {
     public void changeStatus() throws TaskDontExist {
         Task bufferTask = searchTask();
         System.out.println("Current Status:" + bufferTask.getTaskStatus());
-        System.out.println("What you want make?  NOT_STARTED,\n" + "    IN_PROGRESS,\n" + "    COMPLETED;");
+        System.out.println("What you want make? \n NOT_STARTED,\n" + "    IN_PROGRESS,\n" + "    COMPLETED;");
         for (int i = 0; i < 10; i++) {
             try {
                 Scanner s3 = new Scanner(System.in);
@@ -63,9 +62,7 @@ public class TaskManager {
             }
             i++;
         }
-
         System.out.println("  Status is changed " + bufferTask.getTaskStatus());
-
     }
 
     public void deleteTask() throws TaskDontExist {
@@ -75,7 +72,7 @@ public class TaskManager {
 
     public void completeTask() throws TaskDontExist {
         CompleteTaskAction completeTaskAction = new CompleteTaskAction(searchTask());
-        System.out.println(completeTaskAction.perform().getTaskName());
+        System.out.println(completeTaskAction.perform().getTaskName() + " completed");
     }
 
     public Task searchTask() throws TaskDontExist {
@@ -93,7 +90,7 @@ public class TaskManager {
         } else {
             s1 = scanner.nextLine();
             for (Task task : tasks) {
-                if (task.getTaskName().equals(s1)) {
+                if (task.getTaskName().equalsIgnoreCase(s1)) {
                     return task;
                 }
             }
