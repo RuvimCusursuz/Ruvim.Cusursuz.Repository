@@ -1,6 +1,6 @@
 package bonus_hm_1;
 
-public class WithDrawalTransaction implements Transaction{
+public class WithDrawalTransaction implements Transaction {
     private BankAccaunt bankAccaunt;
     private Integer money;
 
