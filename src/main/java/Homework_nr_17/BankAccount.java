@@ -14,7 +14,12 @@ public class BankAccount {
         this.accountNumber = accountNumber;
         this.accountCount++;
     }
-
+    public BankAccount(String accountHolder, String accountNumber, Double accountBalance) {
+        this.accountHolder = accountHolder;
+        this.accountBalance = accountBalance;
+        this.accountNumber = accountNumber;
+        this.accountCount++;
+    }
     public String getAccountHolder() {
         return accountHolder;
     }
@@ -31,7 +36,15 @@ public class BankAccount {
         return accountCount;
     }
 
-    public void setAccountBalance(Double accountBalance) {
+    public void  setAccountBalance(Double accountBalance) {
         this.accountBalance = accountBalance;
+    }
+
+    @Override
+    public String toString() {
+        return "BankAccount{" +
+                "accountHolder='" + accountHolder + '\'' +
+                ", accountBalance=" + accountBalance +
+                '}';
     }
 }
