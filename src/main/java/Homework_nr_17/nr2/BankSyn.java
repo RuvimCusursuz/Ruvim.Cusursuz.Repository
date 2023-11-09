@@ -34,28 +34,37 @@ public class BankSyn {
 
     public void deposit(double amount, String name) {
         bankAccountSearch(name).setAccountBalance(amount + bankAccountSearch(name).getAccountBalance());
-
+        notifyAll();
     }
 
     public void withdraw(double amount, String name) throws InterruptedException {
-        while (bankAccountSearch(name).getAccountBalance() < amount) {
+        boolean b = true;
+        boolean b1 = true;
+        while (b) {
+            if (!(b1)) {
+                Thread.currentThread().interrupt();
+            }
             try {
                 if (bankAccountSearch(name).getAccountBalance() < amount) {
+                    wait(3000);
+                    b1 = false;
                     throw new RuntimeException("недостаточно денег на счете");
+                } else {
+                    bankAccountSearch(name).setAccountBalance(bankAccountSearch(name).getAccountBalance() - amount);
+                    b = false;
                 }
             } catch (RuntimeException e) {
-                System.out.println(Constans.ANSI_RED + "don`t enought money");
+                System.out.println("don`t enought money");
 
             }
         }
-        bankAccountSearch(name).setAccountBalance(bankAccountSearch(name).getAccountBalance() - amount);
     }
 
-    public void transfer(String nameSender, String nameGetter, double amount) throws Exception {
-        synchronized (this) {
-            withdraw(amount, nameSender);
-            deposit(amount, nameGetter);
-        }
+
+    public synchronized void transfer(String nameSender, String nameGetter, double amount) throws Exception {
+        withdraw(amount, nameSender);
+        deposit(amount, nameGetter);
+
         String color = "";
         switch (Thread.currentThread().getName()) {
             case "T":
@@ -64,11 +73,14 @@ public class BankSyn {
             case "T1":
                 color = Constans.ANSI_GREEN;
                 break;
+            case "T2":
+                color = Constans.ANSI_BLACK;
+                break;
             default:
                 throw new Exception("ThreadName invaled");
         }
-        System.out.println(color + nameSender + bankAccountSearch(nameSender).getAccountBalance());
-        System.out.println(color + nameGetter + bankAccountSearch(nameGetter).getAccountBalance());
+        System.out.println(color + nameSender + " " + bankAccountSearch(nameSender).getAccountBalance());
+        System.out.println(color + nameGetter + " " + bankAccountSearch(nameGetter).getAccountBalance());
     }
 
     public void printAllAccounts() {
